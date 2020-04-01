@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_233008) do
+ActiveRecord::Schema.define(version: 2020_04_01_041412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,4 +22,15 @@ ActiveRecord::Schema.define(version: 2020_03_31_233008) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  create_table "vitals", force: :cascade do |t|
+    t.string "category", default: "", null: false
+    t.string "measure", default: "", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category"], name: "index_vitals_on_category"
+    t.index ["user_id"], name: "index_vitals_on_user_id"
+  end
+
+  add_foreign_key "vitals", "users"
 end
