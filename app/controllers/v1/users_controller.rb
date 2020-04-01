@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class V1::UsersController < ApplicationController
   def show
     user = find_user
     return unless user
 
-    render json: { user: user }, status: 200
+    render json: user, status: 200
   end
 
   def create
