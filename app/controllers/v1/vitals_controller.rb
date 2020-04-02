@@ -8,7 +8,7 @@ class V1::VitalsController < ApplicationController
     today = vitals.today
     yesterday = vitals.yesterday
     last_week = vitals.last_week
-    render json: { vitals: {today: today, yesterday: yesterday, last_week: last_week} }, status: 200
+    render json: { today: today, yesterday: yesterday, last_week: last_week }, status: 200
   end
 
   def create
