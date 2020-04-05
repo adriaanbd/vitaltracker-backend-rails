@@ -10,12 +10,11 @@ class V1::VitalsController < ApplicationController
       data = vitals.today
     elsif query === 'yesterday'
       data = vitals.yesterday
-    elsif query === 'last_week'
-      data = vitals.last_week
+    elsif query === 'more_than_1_day_ago'
+      data = vitals.more_than_1_day_ago
     else
-      data = { vitals: {today: vitals.today, yesterday: vitals.yesterday, last_week: vitals.last_week} }
+      data = { vitals: {today: vitals.today, yesterday: vitals.yesterday, more_than_1_day_ago: vitals.more_than_1_day_ago} }
     end
-    # byebug
     render json: data, status: 200
   end
 
