@@ -7,7 +7,7 @@ class V1::SessionsController < ApplicationController
     if user
       render json: user, status: 201
     else
-      render json: { error: 'Invalid email' }, status: 401
+      render json: { error: 'Invalid username' }, status: 401
     end
   end
 end
