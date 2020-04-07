@@ -21,10 +21,10 @@ class V1::VitalsController < ApplicationController
   def create
     user = User.find(params[:user_id])
     vital = user.vitals.build(vital_params)
-    if vital.save!
+    if vital.save
       render json: vital, status: 201
     else
-      render error: { error: 'Cannot create account' }
+      render json: { error: 'Cannot create vital' }
     end
   end
 
