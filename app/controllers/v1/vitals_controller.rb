@@ -21,7 +21,7 @@ class V1::VitalsController < ApplicationController
   def create
     user = User.find(params[:user_id])
     vital = user.vitals.build(vital_params)
-    if vital.save
+    if vital.save!
       render json: vital, status: 201
     else
       render error: { error: 'Cannot create account' }
@@ -32,14 +32,6 @@ class V1::VitalsController < ApplicationController
 
   def vital_params
     params.require(:vital).permit(:category, :measure)
-  end
-
-  def find_vitals
-    vitals = Vital.find_by(category: params[:category])
-    return vitals if vitals
-
-    render json: { error: "Cannot find vital" }
-    nil
   end
 
   def find_vitals_by_user
