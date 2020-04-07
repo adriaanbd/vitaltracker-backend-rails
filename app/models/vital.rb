@@ -8,9 +8,9 @@ class Vital < ApplicationRecord
     Date.today.advance(:days => -2).end_of_day)
   }
 
-  validates :category, inclusion: { in: %w(weight glucose temperature systolic diastolic mood) },
-                       message: "%{value} is not a valid vital category"
-  validates :category, presence: true
+  validates :category, presence: true,
+                       inclusion: { in: %w(weight glucose temperature systolic diastolic mood),
+                                    message: "%{value} is not a valid vital category" }
   validates :user_id, presence: true
   validates :measure, presence: true
 end
