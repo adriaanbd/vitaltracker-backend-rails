@@ -13,7 +13,7 @@ class V1::UsersController < ApplicationController
     if user.save
       render json: user, status: 201
     else
-      render error: { error: 'Cannot create account' }
+      render json: { error: 'Cannot create user' }
     end
   end
 

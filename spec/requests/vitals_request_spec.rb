@@ -18,7 +18,6 @@ RSpec.describe "management", type: :request do
   it 'does not create a Vital without measure attribute' do
     vital_params = { :vital => valid_vital.as_json({except: [:measure, :created_at, :updated_at, :id, :user_id]})}
     post "#{users_url}/#{valid_user.id}/vitals", params: vital_params, headers: valid_headers
-    vitals_json = JSON.parse(response.body)['vitals']
     response_body = JSON.parse(response.body)
     expect(response_body['error']).to include('Cannot create vital')
   end
@@ -27,7 +26,7 @@ RSpec.describe "management", type: :request do
     vital_params = { :vital => valid_vital.as_json({except: [:category, :created_at, :updated_at, :id, :user_id]})}
     post "#{users_url}/#{valid_user.id}/vitals", params: vital_params, headers: valid_headers
     response_body = JSON.parse(response.body)
-    expect(JSON.parse(response.body)['error']).to include('Cannot create vital')
+    expect(response_body['error']).to include('Cannot create vital')
   end
 
   it 'gets a vitals object with today, yesterday and more_than_1_day_ago keys' do
