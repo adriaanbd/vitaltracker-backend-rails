@@ -10,7 +10,8 @@
 
 ## Live Demo
 
-[Live Demo Link](https://vitalstracker.now.sh/)
+* [Backend API deployed to Heroku](https://agile-oasis-62489.herokuapp.com/v1/users/1/vitals)
+* [Front End Demo Link](https://vitalstracker.now.sh/)
 
 
 ## Getting Started
