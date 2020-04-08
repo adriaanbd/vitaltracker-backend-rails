@@ -10,7 +10,7 @@ class V1::VitalsController < ApplicationController
       data = vitals.today
     elsif query === 'yesterday'
       data = vitals.yesterday
-    elsif query === 'more_than_1_day_ago'
+    elsif query === 'more'
       data = vitals.more_than_1_day_ago
     else
       data = { vitals: {today: vitals.today, yesterday: vitals.yesterday, more: vitals.more_than_1_day_ago} }

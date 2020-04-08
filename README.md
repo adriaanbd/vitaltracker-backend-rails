@@ -1,24 +1,64 @@
-# README
+# Vital Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> A Rails API for a vitals tracking app to help you keep track of your weight, glucose, mood, temperature, systolic pressure and diastolic pressure.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Rails
+- Rspec
 
-* System dependencies
+## Live Demo
 
-* Configuration
+[Live Demo Link](https://vitalstracker.now.sh/)
 
-* Database creation
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+### Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+$ git clone https://github.com/adriaanbd/vitaltracker-backend-rails.git
+$ cd vitaltracker-backend-rails
+```
 
-* Deployment instructions
+### Install
 
-* ...
+```
+$ bundle install
+$ rails db:setup
+$ rails db:migrate
+```
+
+### Tests
+```
+$ rspec
+```
+
+### Usage
+
+```
+$ rails s --port=8000
+```
+
+## Authors
+
+👤 **Adriaan Beiertz**
+
+- Github: [@adriaanbd](https://github.com/adriaanbd)
+- Twitter: [@abeiertz](https://twitter.com/abeiertz)
+- Linkedin: [Adriaan Beiertz](https://www.linkedin.com/in/adriaan-beiertz-a307a2158/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
